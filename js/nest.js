@@ -50,6 +50,7 @@ function() {
             var Seconds = new Date().getSeconds();
             var s = '#' + hours + Minutes + Seconds;
             // console.log(str)
+            $("#time").html(s)
             var str = s.colorRgb();
             for (v = 0; v < w.length; v++) {
                 x = w[v];
