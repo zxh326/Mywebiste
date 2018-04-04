@@ -37,6 +37,9 @@ function() {
             // var rgb_b = Math.ceil(Math.random()*255);
             // s.c = o(s.v,"color","" + rgb_r +"," + rgb_g + "," + rgb_b + "");
             var hours = new Date().getHours();
+            var Minutes = new Date().getMinutes();
+            var Seconds = new Date().getSeconds();
+
             if (hours < 10) {
                 hours = '0' + hours;
             }
@@ -46,11 +49,12 @@ function() {
             if (Minutes < 10) {
                 Minutes = '0' + Minutes;
             }
-            var Minutes = new Date().getMinutes();
-            var Seconds = new Date().getSeconds();
+
             var s = '#' + hours + Minutes + Seconds;
             // console.log(str)
-            $("#time").html(s)
+            $("#title").attr("style","color:"+ s);
+            $("#ftitle").attr("style","color:"+ s);
+            $("#time").html(s);
             var str = s.colorRgb();
             for (v = 0; v < w.length; v++) {
                 x = w[v];
@@ -125,7 +129,7 @@ String.prototype.colorRgb = function(){
             }  
             sColor = sColorNew;  
         }  
-        //´¦ÀíÁùÎ»µÄÑÕÉ«Öµ  
+        //å¤„ç†å…­ä½çš„é¢œè‰²å€¼  
         var sColorChange = [];  
         for(var i=1; i<7; i+=2){  
             sColorChange.push(parseInt("0x"+sColor.slice(i,i+2)));    
